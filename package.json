@@ -1,0 +1,54 @@
+{
+  "name": "jdt",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "nyc mocha tests/*.spec.js --timeout 120000 --reporter spec --exit --full-trace",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "deploy": "yarn build && cp ./dist/index.html ./dist/200.html && cd dist && surge",
+    "push": "func() { yarn build && cp ./dist/index.html ./dist/200.html && git add . && git commit -m \"feat: - $1\" && git push origin master; }; func",
+    "git": "func() { git add . && git commit -m \"feat: - $1\" && git push origin master; }; func"
+  },
+  "dependencies": {
+    "core-js": "^2.6.5",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
+    "vue": "^2.6.10",
+    "vue-izitoast": "^1.1.2",
+    "vue-loading-overlay": "^3.2.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.8.0",
+    "@vue/cli-plugin-eslint": "^3.8.0",
+    "@vue/cli-service": "^3.8.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
