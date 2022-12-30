@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
-    "mocha": "^6.2.0",
+    "mocha": "^10.2.0",
     "nyc": "^14.1.1",
     "vue": "^2.6.10",
     "vue-izitoast": "^1.1.2",
